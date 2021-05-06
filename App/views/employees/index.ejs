@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/table.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+      <h3><a href="/employees/create">Create Employee</a></h3>
+      <h1>Employee List</h1>
+     
+      <% if(employees.length>0) {  %>
+        <table class="responsive-table">
+      
+          <thead>
+            <tr>
+              <th scope="col">Sr.No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Position</th>
+              <th scope="col">Salary</th>
+              <th colspan="3"scope="col" >Action</th>
+             
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <td colspan="7">Sources: <a href="#" rel="external">Github</a> &amp; <a target="_blank" href="https://infusion-infotech.com/" rel="external">Infusion Infotech</a>. Data is current as of May 6, 2021.</td>
+            </tr>
+          </tfoot>
+          <tbody>
+            <% const v = 1; %>
+            <% for(var i=0; i<employees.length;i++) { %>
+            <tr>
+                    <td>#<%= i+1; %></td>
+                    <td><%= employees[i].name%></a></td>
+                    <td><%= employees[i].address%></td>
+                    <td><%= employees[i].position%></td>
+                    <td><%= employees[i].salary%></td>
+                    <td ><a href="/employees/show/<%= employees[i]._id%>"><i class="fa fa-eye"></i> </a></td>
+                    <td ><a href="/employees/edit/<%= employees[i]._id%>">  <i class="fa fa-edit"></i> </a></td>
+                    <td>
+                      <form action="/employees/delete/<%= employees[i]._id%>" method="post">
+                        <button type="submit" class="delete"> <i class="fa fa-trash-o"></i> </button>
+                      </form>
+                    </td>
+                 
+          
+            </tr>
+         
+            <% } %>
+          </tbody>
+        </table>
+        <% } else { %>
+          <div>No employees found.</div>
+        <% } %>
+      </div>
+</body>
+</html>

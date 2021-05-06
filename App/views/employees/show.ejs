@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/stylesheets/card.css" />
+    </head>
+    <body>
+        <script src="https://kit.fontawesome.com/783b858c89.js" crossorigin="anonymous"></script>
+        <section>
+            <div class="card">
+                <div class="content">
+                    <h2>Employee Details!</h2>
+                    <div class="user">
+                        <h6>Name :- <%= employee.name %></h6>
+                    </div>
+                    <div class="user">
+                        <h6>Address :- <%= employee.address %></h6>
+                    </div>
+                    <div class="user">
+                        <h6>Position :- <%= employee.position %></h6>
+                    </div>
+                    <div class="user">
+                        <h6>Salary :- <%= employee.salary %></h6>
+                    </div>
+                    <form action="/employees/delete/<%= employee._id%>" method="post">
+                        <a href="/employees" class="delete">Back</a>
+                        <button type="submit" class="delete">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="instagram">
+            <a href="https://www.linkedin.com/in/harsh-kagathara-5a2bab1a0/" target="_blank"> <i class="fab fa-instagram"></i></a>
+        </div>
+    </body>
+</html>

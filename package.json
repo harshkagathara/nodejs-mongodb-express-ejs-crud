@@ -1,0 +1,29 @@
+{
+  "name": "node-mongo-ejs",
+  "version": "1.0.0",
+  "description": "Building a Simple CRUD app with Node, Express, and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": {
+    "name": "Harsh Kagathara",
+    "email": "harshkagu29@gmail.com",
+    "url": "https://infusion-infotech.com/"
+  },
+  "keywords": ["Building A Simple CRUD App With Node JS, Express JS, and MongoDB",
+    "Complete CRUD Application with Node, Express & MongoDB"],
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "ejs": "~2.5.5",
+    "express": "~4.14.1",
+    "mongoose": "^4.8.4",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2",
+    "nodemon": "^2.0.7"
+  }
+}
