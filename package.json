@@ -1,5 +1,5 @@
 {
-  "name": "node-mongo-ejs",
+  "name": "nodejs-mongodb-express-ejs-crud",
   "version": "1.0.0",
   "description": "Building a Simple CRUD app with Node, Express, and MongoDB",
   "main": "index.js",
