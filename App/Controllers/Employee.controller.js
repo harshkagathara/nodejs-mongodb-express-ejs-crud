@@ -57,24 +57,29 @@ exports.edit = function(req, res) {
 };
 // Update an employee
 exports.update = function(req, res) {
-	Employee.findByIdAndUpdate(req.params.id, {
-		$set: {
-			name: req.body.name,
-			address: req.body.address,
-			position: req.body.position,
-			salary: req.body.salary
-		}
-	}, {
-		new: true
-	}, function(err, employee) {
-		if(err) {
-			console.log(err);
-			res.render("../views/employees/edit", {
-				employee: req.body
-			});
-		}
-		res.redirect("/employees/show/" + employee._id);
-	});
+	if(!isNaN(req.body.salary)) {
+		Employee.findByIdAndUpdate(req.params.id, {
+			$set: {
+				name: req.body.name,
+				address: req.body.address,
+				position: req.body.position,
+				salary: req.body.salary
+			}
+		}, {
+			new: true
+		}, function(err, employee) {
+			if(err) {
+				console.log(err);
+				res.render("../views/employees/edit", {
+					employee: req.body
+				});
+			}
+			res.redirect("/employees/show/" + employee._id);
+		});
+	} else {
+		console.log("Salary is not Number")
+		res.redirect("/employees/edit/" + req.params.id);
+	}
 };
 // Delete an employee
 exports.delete = function(req, res) {
